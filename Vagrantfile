@@ -78,16 +78,16 @@ Then RUN a sample mik conversion:
 
 OUTPUT: 
 
-Frome the /vagrant/mik location in the box, you should be able
-to list the contents of MIK's output directory:
+From the /vagrant/mik location in the box, you should be able
+to list the contents of MIK's output directory (for the sample command above):
     ll mik-sample-data/hnoc-delcroix/output/
 
-LOCAL_DIRECTORY means the directory in which you ran `vagrant up`, 
+LOCAL_DIRECTORY:
+Means the directory in which you ran `vagrant up`, 
 where this Vagrantfile lives.
 
-Files in LOCAL_DIRECTORY are available on the box under /vagrant/.
-
-From your local machine, you should be able to use normal filesystem
+Files in LOCAL_DIRECTORY are also available on the box under /vagrant/.
+So from your local machine, you should be able to use normal filesystem
 tools to create/access/edit/delete files at LOCAL_DIRECTORY/mik/.
 
 HELP: 

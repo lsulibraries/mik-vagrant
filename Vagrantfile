@@ -65,9 +65,39 @@ Vagrant.configure("2") do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.post_up_message = "
+MIK SHOULD NOW BE INSTALLED ON YOUR BOX.
+
+LOGIN to the box: 
+vagrant ssh
+
+THEN:
 cd /vagrant/mik
+
+Then RUN a sample mik conversion:
+
 php mik --config mik-sample-data/hnoc-delcroix/hnoc-delcroix_config.ini 
-ll mik-sample-data/hnoc-delcroix/output/"
+ll mik-sample-data/hnoc-delcroix/output/
+
+NOTE: 
+
+Files in THIS_DIRECTORY are available on the box under /vagrant/
+(and vica-versa).
+
+THIS_DIRECTORY means the directory in which you ran `vagrant up`, 
+where this Vagrantfile lives.
+
+Provided that your CLI prompt is located in THIS_DIRECTORY, you 
+should be able to list the contents of 
+mik/mik-sample-data/hnoc-delcroix/output/ 
+
+  ls -la mik/mik-sample-data/hnoc-delcroix/output/ 
+
+to see the output of mik.
+
+
+HELP: 
+For most questions, visit https://github.com/marcusbarnes/mik
+"
 
   config.vm.provision "shell", inline: <<-SHELL
     MHOME=/vagrant

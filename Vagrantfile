@@ -64,6 +64,11 @@ Vagrant.configure("2") do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
+  config.vm.post_up_message = "
+cd /vagrant/mik
+php mik --config mik-sample-data/hnoc-delcroix/hnoc-delcroix_config.ini 
+ll mik-sample-data/hnoc-delcroix/output/"
+
   config.vm.provision "shell", inline: <<-SHELL
     MHOME=/vagrant
     sudo apt-get update

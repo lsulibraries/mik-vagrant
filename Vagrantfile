@@ -70,33 +70,38 @@ MIK SHOULD NOW BE INSTALLED ON YOUR BOX.
 LOGIN to the box: 
 vagrant ssh
 
-THEN:
-cd /vagrant/mik
+CHANGE DIRECTORY to the location of the MIK executable::
+    cd /vagrant/mik
 
 Then RUN a sample mik conversion:
 
-php mik --config mik-sample-data/hnoc-delcroix/hnoc-delcroix_config.ini 
-ll mik-sample-data/hnoc-delcroix/output/
+    php mik --config mik-sample-data/hnoc-delcroix/hnoc-delcroix_config.ini 
 
 NOTE: 
 
-Files in THIS_DIRECTORY are available on the box under /vagrant/
-(and vica-versa).
+Frome the /vagrant/mik location in the box, you should be able
+to list the contents of MIK's output directory:
+    
+    ll mik-sample-data/hnoc-delcroix/output/
 
-THIS_DIRECTORY means the directory in which you ran `vagrant up`, 
+LOCAL_DIRECTORY:
+
+LOCAL_DIRECTORY means the directory in which you ran `vagrant up`, 
 where this Vagrantfile lives.
 
-Provided that your CLI prompt is located in THIS_DIRECTORY, you 
-should be able to list the contents of 
-mik/mik-sample-data/hnoc-delcroix/output/ 
+Files in LOCAL_DIRECTORY are available on the box under /vagrant/.
 
-  ls -la mik/mik-sample-data/hnoc-delcroix/output/ 
-
-to see the output of mik.
-
+From your local machine, you should be able to use normal filesystem
+tools to create/access/edit/delete files at LOCAL_DIRECTORY/mik/.
 
 HELP: 
-For most questions, visit https://github.com/marcusbarnes/mik
+
+For most MIK questions, visit https://github.com/marcusbarnes/mik
+For trouble with Vagrant, be sure you've installed the latest version,
+and check https://www.vagrantup.com/.
+For trouble with this fork of MIK, or this box, open an issue at 
+https://github.com/lsulibraries/mik.
+
 "
 
   config.vm.provision "shell", inline: <<-SHELL

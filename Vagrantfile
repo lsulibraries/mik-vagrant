@@ -68,23 +68,19 @@ Vagrant.configure("2") do |config|
 MIK SHOULD NOW BE INSTALLED ON YOUR BOX.
 
 LOGIN to the box: 
-vagrant ssh
+    vagrant ssh
 
-CHANGE DIRECTORY to the location of the MIK executable::
+CHANGE DIRECTORY to the location of the MIK executable:
     cd /vagrant/mik
 
 Then RUN a sample mik conversion:
-
     php mik --config mik-sample-data/hnoc-delcroix/hnoc-delcroix_config.ini 
 
-NOTE: 
+OUTPUT: 
 
 Frome the /vagrant/mik location in the box, you should be able
 to list the contents of MIK's output directory:
-    
     ll mik-sample-data/hnoc-delcroix/output/
-
-LOCAL_DIRECTORY:
 
 LOCAL_DIRECTORY means the directory in which you ran `vagrant up`, 
 where this Vagrantfile lives.
